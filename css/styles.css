@@ -315,6 +315,7 @@ main .products .inspiration .catMen div {
   font-weight: bold;
   color: #333;
   background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
 }
 
 main .products .inspiration .catWomen {
@@ -344,6 +345,7 @@ main .products .inspiration .catWomen div {
   font-weight: bold;
   color: #333;
   background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
 }
 
 main .products .frontProducts {
