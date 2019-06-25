@@ -1,3 +1,13 @@
+<?php
+session_start();
+$_SESSION['currentPage'] = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') + 1);
+if (isset($_SERVER['HTTP_REFERER'])){
+    if (!isset($_SESSION['previousPage']) || substr($_SERVER['HTTP_REFERER'], strrpos($_SERVER['HTTP_REFERER'], '/') + 1) != $_SESSION['currentPage']) {
+        $_SESSION['previousPage'] = substr($_SERVER['HTTP_REFERER'], strrpos($_SERVER['HTTP_REFERER'], '/') + 1);
+    }
+}
+?>
+
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -52,8 +62,14 @@
                 <li><a href="#">Nyheder</a></li>
                 <li><a href="#">Handelsbetingelser</a></li>
                 <li><a href="#">Om os</a></li>
-                <li><a href='#' class='loginBtn'>Log ind</a></li>
-                <li><a href='register.php' class='loginBtn'>Opret bruger</a></li>
+                <?php
+                if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
+                    echo "<li><a href='assets/logOut.php'>Log ud</a></li>";
+                } else {
+                    echo "<li><a href='#' class='loginBtn'>Log ind</a></li>";
+                    echo "<li><a href='register.php' class='loginBtn'>Opret bruger</a></li>";
+                }
+                ?>
             </ul>
         </nav>
         <div class="basket">
@@ -66,11 +82,11 @@
         </div>
     </div>
     <div class="login container">
-        <form action="login.php" method="post">
-            <label for="formUsername">Bruger:</label>
-            <input type="text" id="formUsername" name="formUsername" placeholder="Brugernavn" required>
-            <label for="formPassword">Password:</label>
-            <input type="password" id="formPassword" name="formPassword" placeholder="Password" required>
+        <form action="assets/login.php" method="post">
+            <label for="username">Bruger:</label>
+            <input type="text" name="username" placeholder="Brugernavn" required>
+            <label for="password">Password:</label>
+            <input type="password" name="password" placeholder="Password" required>
             <input type="submit" value="Log ind">
         </form>
         <a id="newUser" href="register.php">Ny bruger?</a>
