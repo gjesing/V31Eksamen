@@ -1,5 +1,6 @@
 <?php
 $title = "Forside";
+$description = "Velkommen til FancyClothes.dk";
 include "header.php";
 ?>
 
