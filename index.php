@@ -24,7 +24,7 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
             </div>
             <div>
                 <label for="content">Brødtekst</label>
-                <textarea name="content" id="content" cols="30" rows="10" placeholder="Brødtekst..."></textarea>
+                <textarea name="content" id="content" cols="30" rows="10" placeholder="Brødtekst..." required></textarea>
             </div>
             <div>
                 <label for="stars">Antal stjerner</label>
@@ -39,12 +39,8 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
             <div>
                 <label for="category">Kategori</label>
                 <select name="category" id="category" required>
-                    <option value="jakker">Jakker</option>
-                    <option value="bukser">Bukser</option>
-                    <option value="skjorter">Skjorter</option>
-                    <option value="strik">Strik</option>
-                    <option value="tshirts">T-shirts og tanktops</option>
-                    <option value="tasker">Tasker</option>
+                    <option value="" disabled selected>Vælg kategori</option>
+                    <?php require "assets/getProductCategories.php" ?>
                 </select>
             </div>
             <div>
