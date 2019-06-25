@@ -19,7 +19,8 @@ if (isset($_SERVER['HTTP_REFERER'])){
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
+    
+    <link rel="icon" type="image/png" href="img/homeIcon.png">    
 
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Karla|Lato|Oswald" rel="stylesheet">
