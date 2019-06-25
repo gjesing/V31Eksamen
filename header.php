@@ -51,7 +51,10 @@ if (isset($_SERVER['HTTP_REFERER'])){
     <div class="container home">
         <a href="index.php"><img src="img/homeIcon.png" alt="Forside ikon"></a>
         <!-- Velkomstbesked -->
-        <h2><?php echo isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] ? 'Velkommen: ' . $_SESSION['username'] : ''; ?></h2>
+        <?php
+        echo isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] ? '<h2>Velkommen: ' . $_SESSION['username'] . '</h2>' : (isset($_SESSION['errorMsg']) ? '<h2 class="error">' . $_SESSION['errorMsg'] . '</h2>' : '<h2></h2>');
+        unset($_SESSION['errorMsg']);
+        ?>
     </div>
     <hr>
     <div class="container navbar">

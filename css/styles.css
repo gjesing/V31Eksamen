@@ -2,6 +2,10 @@
   font-size: 18px;
 }
 
+.error {
+  color: #ff0000;
+}
+
 .top {
   display: -webkit-box;
   display: -ms-flexbox;

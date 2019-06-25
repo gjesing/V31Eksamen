@@ -2,9 +2,14 @@
 $headers: "Karla", sans-serif;
 $base: "Lato", sans-serif;
 $navFont: "Oswald", sans-serif;
+$errorColor: #ff0000;
 
 :root {
     font-size: 18px;
+}
+
+.error {
+    color: $errorColor;
 }
 
 .top {
