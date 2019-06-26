@@ -1,7 +1,13 @@
 <?php
 require "connect.php";
 
-$statement = $dbh->prepare("SELECT products.productId, products.heading, products.imgUrl, products.imgAlt, products.creationTime, products.description, products.userId, users.username, products.stars, productCategories.categoryName FROM products JOIN Users ON Products.userId=Users.userId JOIN ProductCategories ON Products.categoryId=ProductCategories.categoryId ORDER BY products.creationTime DESC");
+if (isset($_GET['categoryId'])) {
+    $statement = $dbh->prepare("SELECT products.productId, products.heading, products.imgUrl, products.imgAlt, products.creationTime, products.description, products.userId, users.username, products.stars, productCategories.categoryName FROM products JOIN Users ON Products.userId=Users.userId JOIN ProductCategories ON Products.categoryId=ProductCategories.categoryId  WHERE products.categoryId = :categoryId ORDER BY products.creationTime DESC");
+    $statement->bindParam(':categoryId', $_GET['categoryId']);
+
+} else {
+    $statement = $dbh->prepare("SELECT products.productId, products.heading, products.imgUrl, products.imgAlt, products.creationTime, products.description, products.userId, users.username, products.stars, productCategories.categoryName FROM products JOIN Users ON Products.userId=Users.userId JOIN ProductCategories ON Products.categoryId=ProductCategories.categoryId ORDER BY products.creationTime DESC");
+}
 $statement->execute();
 
 while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {

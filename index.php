@@ -68,7 +68,7 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
                 <ul>
                     <?php
                     foreach ($categories as $key => $category) {
-                        echo '<li><a href="?category=' . $category['categoryId'] . '">' . $category['categoryName'] . '</a></li>';
+                        echo '<li><a href="?categoryId=' . $category['categoryId'] . '">' . $category['categoryName'] . '</a></li>';
                     }
                     ?>
                 </ul>
