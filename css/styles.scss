@@ -1,7 +1,10 @@
 // Variabler
-$headers: "Karla", sans-serif;
-$base: "Lato", sans-serif;
-$navFont: "Oswald", sans-serif;
+$headers: "Karla",
+sans-serif;
+$base: "Lato",
+sans-serif;
+$navFont: "Oswald",
+sans-serif;
 $errorColor: #ff0000;
 
 :root {
@@ -26,14 +29,14 @@ $errorColor: #ff0000;
             height: 22px;
         }
 
-        > div,
-        > span {
+        >div,
+        >span {
             border: 1px solid #808080;
             padding: 4px 8px;
             background: #f5f5f5;
         }
 
-        > span {
+        >span {
             padding-top: 6px;
         }
     }
@@ -60,6 +63,7 @@ $errorColor: #ff0000;
     img {
         height: 50px;
     }
+
     h2 {
         display: inline-block;
         padding: 0px 10px;
@@ -121,6 +125,7 @@ $errorColor: #ff0000;
 .login {
     padding: 10px;
     font-family: $headers;
+
     form {
         display: inline-block;
     }
@@ -146,7 +151,7 @@ $errorColor: #ff0000;
 // CreateArticle
 //
 
-.createArticle form > div {
+.createArticle form>div {
     display: flex;
     padding: 10px;
 
@@ -173,17 +178,17 @@ main {
             font-weight: lighter;
         }
 
-        > div {
+        >div {
             padding: 0 20px;
             margin-bottom: 20px;
             font-family: $navFont;
             color: #666;
 
-            > div:first-child {
+            >div:first-child {
                 background: darken(#eee, 10%);
             }
 
-            > div:nth-child(2) {
+            >div:nth-child(2) {
                 background: #eee;
                 font-family: $headers;
 
@@ -285,6 +290,7 @@ main {
                     background: rgba(255, 255, 255, 0.3);
                     cursor: pointer;
                 }
+
                 // background: url("../img/kategoriHerre.jpg") no-repeat center center;
                 // background-size: cover;
                 // // height: calc(((60vw - 250px) /2 ) * .6666);
@@ -317,6 +323,7 @@ main {
                     background: rgba(255, 255, 255, 0.3);
                     cursor: pointer;
                 }
+
                 // background: url("../img/kategoriKvinde.jpg") no-repeat center center;
                 // background-size: cover;
                 // // height: calc(((60vw - 250px) /2 ) * .6666);
@@ -341,6 +348,7 @@ main {
                 img {
                     width: 100%;
                 }
+
                 .info {
                     text-align: center;
                     padding: 20px;
@@ -355,6 +363,7 @@ main {
                         }
                     }
                 }
+
                 .description {
                     background: #f5f5f5;
                     padding: 20px 20px 0 20px;
@@ -425,6 +434,28 @@ footer .contact {
 h1.tagline {
     font-family: $navFont;
     text-align: center;
+}
+
+//
+// Register
+//
+form.register {
+    width: 60%;
+    margin: auto;
+
+    div {
+        display: flex;
+        padding: 10px;
+
+        label {
+            width: 120px;
+        }
+
+        input,
+        textarea {
+            flex: 1;
+        }
+    }
 }
 
 // Helpers
@@ -519,7 +550,7 @@ h6 {
         display: none;
     }
 
-    form > div {
+    form>div {
         display: flex;
         margin-top: 20px;
         flex-direction: column;
@@ -536,7 +567,7 @@ h6 {
 }
 
 @media screen and (max-width: 400px) {
-    form > div:first-child {
+    form>div:first-child {
         font-size: 0.8rem;
     }
 
