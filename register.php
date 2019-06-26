@@ -11,11 +11,11 @@ include "header.php";
     </div>
     <div>
         <label for="password">Indtast password</label>
-        <input type="text" name="password" placeholder="Indtast password" required>
+        <input type="password" name="password" placeholder="Indtast password" required>
     </div>
     <div>
         <label for="password2">Indtast password igen</label>
-        <input type="text" name="password2" placeholder="Indtast password igen" required>
+        <input type="password" name="password2" placeholder="Indtast password igen" required>
     </div>
     <input type="submit" value="Ok">
 </form>
