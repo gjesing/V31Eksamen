@@ -43,7 +43,7 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
                     <option value="" disabled selected>Vælg kategori</option>
                     <?php
                     foreach ($categories as $key => $value) {
-                        echo '<option value="' . $value['categoryId'] .'">' . $value['categoryName'] . '</option>';
+                        echo '<option value="' . $value['categoryId'] . '">' . $value['categoryName'] . '</option>';
                     }
                     ?>
                 </select>
@@ -66,12 +66,11 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
             </div>
             <div class="catMain">
                 <ul>
-                    <li><a href="#">Jakker</a></li>
-                    <li><a href="#">Bukser</a></li>
-                    <li><a href="#">Skjorter</a></li>
-                    <li><a href="#">Strik</a></li>
-                    <li><a href="#">T-shirts & Tank tops</a></li>
-                    <li><a href="#">Tasker</a></li>
+                    <?php
+                    foreach ($categories as $key => $category) {
+                        echo '<li><a href="?category=' . $category['categoryId'] . '">' . $category['categoryName'] . '</a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
