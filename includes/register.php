@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['password'] = $row['password'];
             $_SESSION['accessLevel'] = $row['accessLevel'];
         }
-        header("location: ../index.php");
+        header("location: ../" . $_SESSION['previousPage']);
     }
 
     $dbh = null;

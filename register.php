@@ -2,6 +2,11 @@
 $title = "Opret bruger";
 $description = "Opret bruger på FancyClothes.dk";
 include "header.php";
+
+if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
+    header("location: " . $_SESSION['previousPage']);
+    exit();
+}
 ?>
 
 <form action="includes/register.php" method="post" class="register">
