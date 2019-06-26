@@ -10,10 +10,10 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
     ?>
     <div class="createArticle container">
         <h3 class="center errorMsg">Opret ny vare:</h3>
-        <form action="includes/insertArticle.php" method="post">
+        <form action="includes/insertArticle.php" method="post" enctype="multipart/form-data">
             <div>
                 <label for="imgUrl">Billede</label>
-                <input type="text" id="imgUrl" name="imgUrl" placeholder="Vælg billede" required>
+                <input type="file" id="imgUrl" name="imgUrl" accept="image/*" placeholder="Vælg billede" required>
             </div>
             <div>
                 <label for="imgAlt">Alt tekst</label>
