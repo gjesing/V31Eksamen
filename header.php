@@ -68,7 +68,7 @@ if (isset($_SERVER['HTTP_REFERER'])){
                 <li><a href="#">Om os</a></li>
                 <?php
                 if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
-                    echo "<li><a href='assets/logOut.php'>Log ud</a></li>";
+                    echo "<li><a href='includes/logOut.php'>Log ud</a></li>";
                 } else {
                     echo "<li><a href='#' class='loginBtn'>Log ind</a></li>";
                     echo "<li><a href='register.php' class='loginBtn'>Opret bruger</a></li>";
@@ -86,7 +86,7 @@ if (isset($_SERVER['HTTP_REFERER'])){
         </div>
     </div>
     <div class="login container">
-        <form action="assets/login.php" method="post">
+        <form action="includes/login.php" method="post">
             <label for="username">Bruger:</label>
             <input type="text" name="username" placeholder="Brugernavn" required>
             <label for="password">Password:</label>

@@ -40,7 +40,7 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
                 <label for="category">Kategori</label>
                 <select name="category" id="category" required>
                     <option value="" disabled selected>Vælg kategori</option>
-                    <?php require "assets/getProductCategories.php" ?>
+                    <?php require "includes/getProductCategories.php" ?>
                 </select>
             </div>
             <div>
@@ -102,7 +102,7 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
             </div>
         </div>
         <div class="frontProducts">
-            <?php require "assets/getProducts.php" ?>
+            <?php require "includes/getProducts.php" ?>
         </div>
     </div>
 </main>
