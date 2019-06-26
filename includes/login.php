@@ -3,14 +3,12 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require "connect.php";
     
-    $statement = $dbh->prepare("SELECT * FROM Users WHERE username = ? AND password = ?");
-    $statement->bindparam(1, $_POST['username']);
-    $statement->bindparam(2, $_POST['password']);
+    $statement = $dbh->prepare("SELECT * FROM Users WHERE username = :username");
+    $statement->bindparam(':username', $_POST['username']);
     $statement->execute();
     
     
-    if (empty($row = $statement->fetch())) {
-        $_SESSION['username'] = $_POST['username'];
+    if (empty($row = $statement->fetch()) || !password_verify($_POST['password'], $row['password'])) {
         $_SESSION['errorMsg'] = "Forkert brugernavn eller adgangskode";
         header("location: ../" . $_SESSION['currentPage']);
     } else {

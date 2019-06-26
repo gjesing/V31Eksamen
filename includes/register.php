@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $statement = $dbh->prepare("INSERT INTO Users (username, password) VALUES (:username, :password)");
         $statement->bindParam(':username', $_POST['username']);
-        $statement->bindParam(':password', $_POST['password']);
+        $statement->bindParam(':password', password_hash($_POST['password'], PASSWORD_DEFAULT));
         $statement->execute();
         $statement = $dbh->prepare("SELECT * FROM Users WHERE username = ?");
         $statement->bindparam(1, $_POST['username']);
