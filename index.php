@@ -11,8 +11,8 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
         <h3 class="center errorMsg">Opret ny vare:</h3>
         <form action="includes/insertArticle.php" method="post">
             <div>
-                <label for="imgSrc">Billede</label>
-                <input type="text" id="imgSrc" name="imgSrc" placeholder="Vælg billede" required>
+                <label for="imgUrl">Billede</label>
+                <input type="text" id="imgUrl" name="imgUrl" placeholder="Vælg billede" required>
             </div>
             <div>
                 <label for="imgAlt">Alt tekst</label>
@@ -23,8 +23,8 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
                 <input type="text" id="heading" name="heading" placeholder="Overskrift..." required>
             </div>
             <div>
-                <label for="content">Brødtekst</label>
-                <textarea name="content" id="content" cols="30" rows="10" placeholder="Brødtekst..." required></textarea>
+                <label for="description">Brødtekst</label>
+                <textarea name="description" id="description" cols="30" rows="10" placeholder="Brødtekst..." required></textarea>
             </div>
             <div>
                 <label for="stars">Antal stjerner</label>
@@ -37,8 +37,8 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
                 </select>
             </div>
             <div>
-                <label for="category">Kategori</label>
-                <select name="category" id="category" required>
+                <label for="categoryId">Kategori</label>
+                <select name="categoryId" id="categoryId" required>
                     <option value="" disabled selected>Vælg kategori</option>
                     <?php require "includes/getProductCategories.php" ?>
                 </select>
