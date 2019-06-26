@@ -2,6 +2,7 @@
 $title = "Forside";
 $description = "Velkommen til FancyClothes.dk";
 include "header.php";
+require "includes/getProductCategories.php";
 ?>
 
 <?php
@@ -40,7 +41,11 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
                 <label for="categoryId">Kategori</label>
                 <select name="categoryId" id="categoryId" required>
                     <option value="" disabled selected>Vælg kategori</option>
-                    <?php require "includes/getProductCategories.php" ?>
+                    <?php
+                    foreach ($categories as $key => $value) {
+                        echo '<option value="' . $value['categoryId'] .'">' . $value['categoryName'] . '</option>';
+                    }
+                    ?>
                 </select>
             </div>
             <div>
